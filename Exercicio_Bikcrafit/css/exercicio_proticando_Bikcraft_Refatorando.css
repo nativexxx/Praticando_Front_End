@@ -1,0 +1,329 @@
+body {
+  background-color: #2b2b2b;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  justify-content: center;
+}
+/* ======================
+||     Elementos nav    ||
+======================= */
+header {
+  display: inline;
+}
+header h1 {
+  color: #fff;
+  font-family: "Monoton", cursive;
+  font-family: "Piedra", cursive;
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 1.3rem;
+}
+nav a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  color: black;
+  padding: 0.9rem 2rem;
+  background-color: #fff;
+  border-radius: 0.3rem;
+  margin-left: 0.9rem;
+  transition: all 0.5s, border-radius 2s 4s;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+header nav a:hover {
+  background-color: #e21;
+  transform: translateX(1);
+  transform: translate(0rem, -0.3rem);
+  transition: all 0.5s, border-radius 2s 4s;
+  color: #fff;
+}
+/* ======================
+||   Galeria de fotos ||
+======================= */
+.galeria {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  gap: 0.19rem;
+  background: rgb(247, 247, 247);
+  max-width: 62.5rem;
+  position: relative;
+}
+.galeria h1 {
+  font-size: 2rem;
+}
+.mensagens h2 {
+  background-image: url(../img/onda.svg);
+}
+.bicicleta {
+  max-width: 100%;
+  display: block;
+  height: 101%;
+}
+.discricao {
+  text-align: end;
+  align-items: center;
+  display: grid;
+  align-content: center;
+  padding: 1.3rem;
+  justify-items: end;
+}
+.discricao p {
+  font-size: 1.3rem;
+  font-weight: Arial;
+}
+.galeriaCor {
+  background: #fff;
+}
+.botao {
+  background: #e21;
+  padding: 1.3rem;
+  border-radius: 0.19rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.5s, border-radius 2s 4s;
+}
+.botao:hover {
+  background-color: darkorange;
+  transform: translate(0rem, 0.3rem);
+  transition: all 0.5s, border-radius 2s 4s;
+}
+.mensagens {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.mensagens h2 {
+  font-size: 4rem;
+  display: grid;
+  align-content: space-evenly;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.2);
+}
+.descricao {
+  padding: 0px 4rem 0px 0px;
+  margin: 0;
+}
+.item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.6rem 1.3rem;
+  align-items: center;
+  transition: all 0.5s, border-radius 2s 4s;
+}
+.item p {
+  grid-column: 2;
+  font-size: 1.3rem;
+  margin: 0 0 1.3rem 0;
+}
+.item:hover::before {
+  content: "";
+  width: 6px;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  margin: 0px -19px;
+  transform: translate(1rem, 0rem);
+  transition: all 0.5s, border-radius 2s 4s;
+}
+.item:hover {
+  background-color: #2b2b2b;
+  transform: translate(1rem, 0rem);
+  transition: all 0.5s, border-radius 2s 4s;
+  color: #fff;
+  top: -5px;
+}
+
+.icone {
+  margin-left: 0.8rem;
+}
+
+footer p {
+  background: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  padding: 1.3rem;
+  margin: 0rem;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  font-weight: bolder;
+}
+#menu__toggle {
+  display: none;
+}
+
+/*=============================
+||        Menu Hamburger    ||
+=============================*/
+
+/* =============================
+||      media Quare           ||
+============================= */
+@media (max-width: 850px) {
+  .galeria .mensagens h2 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 810px) {
+  .item p {
+    font-size: 1.1rem;
+  }
+  .item {
+    gap: 0.1rem 1rem;
+  }
+}
+@media (max-width: 730px) {
+  .galeria .mensagens h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 790px) {
+  .galeria .mensagens h2 {
+    font-size: 2rem;
+  }
+  .galeria h1 {
+    font-size: 1.5rem;
+  }
+  .discricao p {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 710px) {
+  .galeria h1 {
+    place-self: center;
+    font-size: 1.8rem;
+  }
+  header h1 {
+    margin: 0.3rem;
+  }
+  nav {
+    display: none;
+  }
+  .galeria {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .coluna2 {
+    flex-direction: column;
+  }
+  .discricao {
+    text-align: center;
+    justify-items: center;
+  }
+  .mensagens {
+    border: 1px solid #e5e5e5;
+  }
+}
+@media (max-width: 709px) {
+  #menu__toggle {
+    opacity: 0;
+  }
+  #menu__toggle:checked + .menu__btn > span {
+    transform: rotate(45deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+  #menu__toggle:checked + .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+    left: 0 !important;
+  }
+  .menu__btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: 0.25s;
+  }
+  .menu__btn > span::before {
+    content: "";
+    top: -8px;
+  }
+  .menu__btn > span::after {
+    content: "";
+    top: 8px;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 40;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #eceff1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    transition-duration: 0.25s;
+    z-index: 1;
+  }
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: 0.25s;
+  }
+  .menu__item:hover {
+    background-color: #cfd8dc;
+  }
+}
+@media (max-width: 500px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  .galeria h1 {
+    margin: 0;
+  }
+  .item p {
+    margin: 0;
+  }
+}
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .galeria h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .discricao p {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+  }
+  .galeria .mensagens h2 {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 300px) {
+  header h1 {
+    font-size: 1rem;
+  }
+}
